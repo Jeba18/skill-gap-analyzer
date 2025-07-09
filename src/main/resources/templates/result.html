@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Skill Gap Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9f7ef;
+            padding: 20px;
+        }
+        h2 {
+            color: #117a65;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        .missing {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 2px dashed #117a65;
+            border-radius: 10px;
+            width: 60%;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>Missing Skills for <span th:text="${selectedRole}"></span>:</h2>
+    <div class="missing">
+        <ul>
+            <li th:each="skill : ${missingSkills}" th:text="${skill}"></li>
+        </ul>
+    </div>
+    <br>
+    <a href="/">← Back</a>
+</body>
+</html>
